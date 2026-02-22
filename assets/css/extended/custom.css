@@ -1,0 +1,360 @@
+/* MiloMore - Retro UI Theme
+   Inspired by old Steam browser, FastTracker II, and late 90s utility software */
+
+:root {
+  /* Muted olive/steel palette */
+  --primary-bg: #2a2f2a;
+  --secondary-bg: #333833;
+  --panel-bg: #3a3f3a;
+  --accent: #8b9f6b;
+  --accent-bright: #a4b87c;
+  --text-main: #c8ccb8;
+  --text-dim: #7a7f6a;
+  --text-bright: #d4d8c4;
+  --border-light: #5a5f4a;
+  --border-dark: #1a1f1a;
+  --link-color: #8b9f6b;
+  --link-hover: #c4d89c;
+
+  /* Inset/outset border helpers */
+  --bevel-out: inset -1px -1px 0 var(--border-dark), inset 1px 1px 0 var(--border-light);
+  --bevel-in: inset 1px 1px 0 var(--border-dark), inset -1px -1px 0 var(--border-light);
+}
+
+/* Override PaperMod dark theme */
+html[data-theme="dark"] {
+  --theme: var(--primary-bg);
+  --entry: var(--secondary-bg);
+  --primary: var(--text-main);
+  --secondary: var(--text-dim);
+  --tertiary: var(--panel-bg);
+  --content: var(--text-main);
+  --border: var(--border-light);
+}
+
+/* Base typography - monospace everything */
+body {
+  font-family: "IBM Plex Mono", "Fira Code", "Cascadia Code", "SF Mono", "Consolas", "Liberation Mono", monospace !important;
+  font-size: 14px;
+  line-height: 1.6;
+  background-color: var(--primary-bg) !important;
+  color: var(--text-main) !important;
+}
+
+h1, h2, h3, h4, h5, h6,
+.post-title, .entry-header h2 {
+  font-family: "IBM Plex Mono", "Fira Code", monospace !important;
+  font-weight: 700;
+  color: var(--text-bright) !important;
+  letter-spacing: -0.02em;
+}
+
+/* Scanline subtle effect on body */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+  z-index: 9999;
+}
+
+/* Header - toolbar style */
+.header {
+  background: var(--secondary-bg) !important;
+  box-shadow: var(--bevel-out);
+  border-bottom: 2px solid var(--border-dark) !important;
+}
+
+.nav {
+  max-width: 800px;
+}
+
+.logo a {
+  font-family: "IBM Plex Mono", monospace !important;
+  font-weight: 700;
+  font-size: 16px !important;
+  color: var(--accent-bright) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Navigation links - button style */
+#menu a {
+  font-family: "IBM Plex Mono", monospace !important;
+  font-size: 12px !important;
+  color: var(--text-main) !important;
+  background: var(--panel-bg);
+  padding: 4px 12px !important;
+  border: 1px solid var(--border-light);
+  box-shadow: 1px 1px 0 var(--border-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.1s;
+}
+
+#menu a:hover {
+  color: var(--accent-bright) !important;
+  background: var(--secondary-bg);
+  box-shadow: var(--bevel-in);
+}
+
+#menu li + li {
+  margin-left: 4px;
+}
+
+/* Main content area */
+.main {
+  max-width: 800px;
+}
+
+/* Post entries - panel/server-list style */
+.post-entry {
+  background: var(--secondary-bg) !important;
+  border: 1px solid var(--border-light) !important;
+  box-shadow: var(--bevel-in);
+  border-radius: 0 !important;
+  margin-bottom: 8px !important;
+  padding: 12px 16px !important;
+  transition: all 0.1s;
+}
+
+.post-entry:hover {
+  background: var(--panel-bg) !important;
+  border-color: var(--accent) !important;
+}
+
+.entry-header h2 {
+  font-size: 15px !important;
+  color: var(--accent-bright) !important;
+  margin-bottom: 4px !important;
+}
+
+.entry-content p {
+  font-size: 13px;
+  color: var(--text-dim) !important;
+  margin: 0;
+}
+
+.entry-footer {
+  font-size: 11px !important;
+  color: var(--text-dim) !important;
+  margin-top: 8px;
+  padding-top: 6px;
+  border-top: 1px solid var(--border-dark);
+}
+
+/* Home info panel */
+.first-entry {
+  background: var(--secondary-bg) !important;
+  border: 1px solid var(--border-light) !important;
+  box-shadow: var(--bevel-in);
+  border-radius: 0 !important;
+  padding: 20px !important;
+}
+
+.first-entry .entry-header h1 {
+  font-size: 18px !important;
+  color: var(--accent-bright) !important;
+}
+
+.first-entry .entry-content {
+  font-size: 13px;
+  color: var(--text-main) !important;
+}
+
+/* Article/post page */
+.post-content {
+  color: var(--text-main) !important;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.post-content h2 {
+  font-size: 16px !important;
+  color: var(--accent-bright) !important;
+  margin-top: 2em;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.post-content h3 {
+  font-size: 14px !important;
+  color: var(--accent) !important;
+}
+
+.post-content a {
+  color: var(--link-color) !important;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.post-content a:hover {
+  color: var(--link-hover) !important;
+}
+
+.post-content blockquote {
+  border-left: 3px solid var(--accent) !important;
+  background: var(--secondary-bg);
+  padding: 8px 16px;
+  color: var(--text-dim);
+}
+
+.post-content code {
+  background: var(--panel-bg) !important;
+  color: var(--accent-bright) !important;
+  padding: 2px 6px;
+  font-size: 13px;
+}
+
+.post-content pre {
+  background: var(--border-dark) !important;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--bevel-in);
+  border-radius: 0 !important;
+}
+
+/* Cover images */
+.entry-cover img {
+  border: 1px solid var(--border-light);
+  box-shadow: var(--bevel-in);
+  border-radius: 0 !important;
+}
+
+/* Tags */
+.post-tags a {
+  background: var(--panel-bg) !important;
+  color: var(--text-dim) !important;
+  border: 1px solid var(--border-light) !important;
+  border-radius: 0 !important;
+  font-size: 11px !important;
+  font-family: "IBM Plex Mono", monospace !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 2px 8px !important;
+  box-shadow: 1px 1px 0 var(--border-dark);
+}
+
+.post-tags a:hover {
+  background: var(--secondary-bg) !important;
+  color: var(--accent-bright) !important;
+}
+
+/* Footer */
+.footer {
+  font-size: 11px;
+  color: var(--text-dim) !important;
+  border-top: 2px solid var(--border-dark) !important;
+  background: var(--secondary-bg) !important;
+  box-shadow: var(--bevel-out);
+}
+
+.footer a {
+  color: var(--accent) !important;
+}
+
+/* Social icons */
+.social-icons a {
+  color: var(--text-dim) !important;
+}
+
+.social-icons a:hover {
+  color: var(--accent-bright) !important;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 14px;
+  background: var(--primary-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--panel-bg);
+  border: 1px solid var(--border-light);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-light);
+}
+
+/* Theme toggle button */
+#theme-toggle {
+  background: var(--panel-bg);
+  border: 1px solid var(--border-light);
+  box-shadow: 1px 1px 0 var(--border-dark);
+  border-radius: 0;
+  padding: 4px;
+}
+
+#theme-toggle:hover {
+  box-shadow: var(--bevel-in);
+}
+
+/* Top link */
+.top-link {
+  background: var(--panel-bg) !important;
+  border: 1px solid var(--border-light) !important;
+  border-radius: 0 !important;
+  box-shadow: 1px 1px 0 var(--border-dark);
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+  font-size: 11px;
+  color: var(--text-dim);
+  font-family: "IBM Plex Mono", monospace !important;
+}
+
+.breadcrumbs a {
+  color: var(--accent) !important;
+}
+
+/* Post meta */
+.post-meta {
+  font-size: 12px !important;
+  color: var(--text-dim) !important;
+}
+
+/* Archive page */
+.archive-year {
+  color: var(--accent-bright) !important;
+}
+
+.archive-entry .entry-hint {
+  color: var(--text-dim) !important;
+}
+
+/* Selection */
+::selection {
+  background: var(--accent);
+  color: var(--primary-bg);
+}
+
+/* Pagination */
+.pagination a {
+  background: var(--panel-bg) !important;
+  color: var(--text-main) !important;
+  border: 1px solid var(--border-light) !important;
+  border-radius: 0 !important;
+  box-shadow: 1px 1px 0 var(--border-dark);
+  font-family: "IBM Plex Mono", monospace !important;
+  font-size: 12px !important;
+}
+
+.pagination a:hover {
+  background: var(--secondary-bg) !important;
+  color: var(--accent-bright) !important;
+  box-shadow: var(--bevel-in);
+}
+
+/* Loading IBM Plex Mono from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap');
