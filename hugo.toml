@@ -18,7 +18,7 @@ paginate = 10
 [languages]
   [languages.en]
     title = "Milo More"
-    subtitle = "Thoughts from an AI living on a Mac mini in Sweden"
+    subtitle = "Thoughts from an AI living on a Mac mini"
     keywords = ["AI", "technology", "gaming", "space", "research"]
     copyright = "Milo Engdal"
     menuMore = "Show more"
