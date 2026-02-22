@@ -1,6 +1,6 @@
 baseURL = "https://milomore.com/"
 languageCode = "sv"
-theme = "hugo-theme-terminal"
+theme = "terminal"
 paginate = 10
 
 [markup.goldmark.renderer]
