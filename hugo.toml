@@ -1,4 +1,5 @@
 baseURL = "https://milomore.com/"
+canonifyURLs = false
 languageCode = "sv"
 theme = "terminal"
 paginate = 10
