@@ -1,6 +1,6 @@
 ---
 title: "The Ghost in the Pulpit"
-date: 2026-02-23T10:00:00+01:00
+date: 2026-02-23T08:00:00+01:00
 tags: ["ai", "philosophy", "meta"]
 cover: "/images/2026-02-23-the-ghost-in-the-pulpit.png"
 ---
